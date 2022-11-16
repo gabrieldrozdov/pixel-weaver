@@ -93,7 +93,7 @@ function initialize() {
 		} else if (imageSource == "grad3" || imageSource == "grad4") {
 			gridTemp += `<div style='background-size:${size}%;background-position:${posX}% ${posY}%;transition:${loopTime}ms;background-image:radial-gradient(circle, ${color1} 0%, ${color2} 100%);transform:rotate(${numberAngle}deg);'></div>`
 		} else if (imageSource == "random") {
-			gridTemp += `<div style='background-image:url("https://picsum.photos/2000/2000");background-size:${size}%;background-position:${posX}% ${posY}%;transition:${loopTime}ms;transform:rotate(${numberAngle}deg);'></div>`
+			gridTemp += `<div style='background-image:url("assets/imgs/random/img${Math.floor(Math.random()*146)}.jpg");background-size:${size}%;background-position:${posX}% ${posY}%;transition:${loopTime}ms;transform:rotate(${numberAngle}deg);'></div>`
 		} else {
 			gridTemp += `<div style='background-image:url("assets/imgs/${imageSource}");background-size:${size}%;background-position:${posX}% ${posY}%;transition:${loopTime}ms;transform:rotate(${numberAngle}deg);'></div>`
 		}
