@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Pixel Weaver</title>
+		<meta name="description" content="Online pattern generator using parameterized CSS grid layouts.">
+		<meta name="keywords" content="pattern, grid, parameter, generative, modular">
+		<meta name="author" content="Gabriel Drozdov">	  
+		<link rel="icon" type="image/x-icon" href="assets/favicon.png">
+		<link rel="stylesheet" href="style.css">
+		<script src=
+"https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
+	</head>
+	<body>
+		<div class="container"></div>
+
+		<div id="screenshot" class="btn-hide floating-btn" onclick="screenshot()">📷</div>
+		<div id="pause" class="btn-hide floating-btn" onclick="pauseGrid()">⏸︎</div>
+
+		<div id="notice"><p>Press the spacebar to un-hide controls</p></div>
+
+		<div class="intro">
+			<h1>
+				<span>P</span><span>i</span><span>x</span><span>e</span><span>l</span>
+				<br><span>W</span><span>e</span><span>a</span><span>v</span><span>e</span><span>r</span>
+			</h1>
+			<p>
+				Design + Code: <a href="https://www.gabrieldrozdov.com/" target="_blank">Gabriel Drozdov</a><br><br>
+				COLOPHON: “BIZ UDMincho” by <a href="https://www.morisawa.co.jp/?ref=uncut.wtf" target="_blank">TypeBank Co., Ltd</a>
+			</p>
+		</div>
+
+		<div id="controls" class="controls-container">
+			<div class="controls-heading">
+				<h2>CONTROLS</h2>
+			</div>
+			<div class="controls">
+				<div>
+					<h2>CONTROLS</h2>
+				</div>
+				<div>
+					<input type="file" id="customSource" style="width: 100%;">
+				</div>
+				<div>
+					<label>Source</label>
+					<select class="dropdown" id="source">
+						<option value="bricks.jpg">Bricks</option>
+						<option value="leaves.jpg">Leaves</option>
+						<option value="ornament.jpg">Ornament</option>
+						<option value="dots.jpg">Dots</option>
+						<option value="horizon.jpg">Horizon</option>
+						<option value="grain.jpg">Grain</option>
+						<option value="text.jpg">Text</option>
+						<option value="whist.png">Whist</option>
+						<option value="me.jpg">Me</option>
+						<option value="moonbug.jpg">Moonbug</option>
+						<option value="risd.png">RISD</option>
+						<option value="elon.png">Greed</option>
+						<option value="depression.png">Depression</option>
+						<option value="pixel-weaver.png">This</option>
+						<option value="grid.svg">Grid (thin)</option>
+						<option value="grid2.svg">Grid (thicc)</option>
+						<option value="mosaic.png">Mosaic</option>
+						<option value="grad1">Linear Gradient</option>
+						<option value="grad2">Linear Gradient (Colorful)</option>
+						<option value="grad3">Radial Gradient</option>
+						<option value="grad4">Radial Gradient (Colorful)</option>
+						<option value="gradgrid.png">Grid of Gradients</option>
+						<option value="random">Random Image</option>
+					</select>	
+				</div>
+				<div>
+					<label>Angle</label>
+					<input type="range" min="0" max="359" value="0" class="slider" id="numberAngle"
+						oninput="this.nextElementSibling.value = this.value">
+					<output>0</output>
+				</div>
+				<div>
+					<label>Columns</label>
+					<input type="range" min="1" max="20" value="5" class="slider" id="numberCols"
+						oninput="this.nextElementSibling.value = this.value">
+					<output>5</output>
+				</div>
+				<div>
+					<label>Rows</label>
+					<input type="range" min="1" max="20" value="5" class="slider" id="numberRows"
+						oninput="this.nextElementSibling.value = this.value">
+					<output>5</output>
+				</div>
+				<div>
+					<label>Zoom</label>
+					<input type="range" min="1" max="5000" value="100" class="slider" id="imageZoom"
+						oninput="this.nextElementSibling.value = this.value">
+					<output>100</output>
+				</div>
+				<div>
+					<label>Shift</label>
+					<input type="range" min="0" max="300" value="50" class="slider" id="imageShift"
+						oninput="this.nextElementSibling.value = this.value">
+					<output>50</output>
+				</div>
+				<div>
+					<label>Time</label>
+					<input type="range" min="100" max="5000" value="1000" class="slider" id="loopTime"
+						oninput="this.nextElementSibling.value = this.value">
+					<output>1000</output>
+				</div>
+				<div>
+					<label>Color</label>
+					<input type="range" min="0" max="359" value="180" class="slider" id="pageColor"
+						oninput="this.nextElementSibling.value = this.value; updateColor()">
+					<output>180</output>
+				</div>
+				<div id="buttons">
+					<button onclick="randomize()">Randomize</button>
+					<button onclick="initialize()" id="generate">Generate</button>
+				</div>
+			</div>
+		</div>
+
+		<script src="script.js"></script>
+	</body>
+</html>
