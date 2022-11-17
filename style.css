@@ -24,6 +24,8 @@
 		transform: translateZ(0);
 		width: 100vw;
 		height: 100vh;
+		overflow: hidden;
+		position: relative;
 	}
 
 /* MAIN CONTAINER */
@@ -220,6 +222,7 @@
 			box-shadow: 40px 0 40px var(--primary), 20px 0 20px var(--primary), 5px 0 5px var(--primary);
 			border-radius: 0 20px 20px 0;
 			font-size: 20px;
+			overflow-y: scroll;
 		}
 		.controls > div {
 			flex-grow: 1;
@@ -425,5 +428,8 @@
 		@media screen and (max-width: 500px) {
 			.controls {
 				width: 80vw;
+			}
+			.intro {
+				padding-left: 80px;
 			}
 		}
