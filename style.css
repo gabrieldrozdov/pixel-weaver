@@ -130,7 +130,7 @@
 		align-items: center;
 		justify-content: center;
 		cursor: pointer;
-		z-index: 999;
+		z-index: 99;
 		transition: .2s;
 		color: var(--light);
 		font-size: 30px;
@@ -158,8 +158,8 @@
 		left: 0;
 		font-size: 5vw;
 		z-index: 999999;
-		color: var(--light);
-		background-color: var(--dark);
+		color: var(--primary);
+		background-color: rgba(0,0,0,.5);
 		width: 100vw;
 		height: 100vh;
 		display: flex;
@@ -182,7 +182,7 @@
 			position: fixed;
 			transform: translateX(calc(-100% + 40px));
 			transition: transform .5s;
-			z-index: 9;
+			z-index: 999;
 			display: flex;
 			align-items: center;
 			left: 0;
@@ -236,7 +236,7 @@
 			color: var(--light);
 		}
 		.controls-hide {
-			transform: translateX(-200%);
+			transform: translateX(-150%);
 		}
 
 	/* FILE SELECT */
@@ -419,4 +419,11 @@
 		}
 		#generate {
 			background-color: var(--complement) !important;
+		}
+
+/* MOBILE STYLES */
+		@media screen and (max-width: 500px) {
+			.controls {
+				width: 80vw;
+			}
 		}

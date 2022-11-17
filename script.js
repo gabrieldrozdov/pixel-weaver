@@ -270,7 +270,7 @@ function screenshot() {
 	controls.classList.add("controls-hide");
 	screenshotBtn.classList.add("btn-hide");
 	pauseBtn.classList.add("btn-hide");
-	notice.style.opacity = ".8";
+	notice.style.opacity = "1";
 	notice.style.filter = "blur(0)";
 	setTimeout(function() {
 		notice.style.opacity = "0";
