@@ -60,8 +60,8 @@
 						<option value="elon.png">Greed</option>
 						<option value="depression.png">Depression</option>
 						<option value="pixel-weaver.png">This</option>
-						<option value="grid.svg">Grid (thin)</option>
-						<option value="grid2.svg">Grid (thicc)</option>
+						<option value="grid.png">Grid (thin)</option>
+						<option value="grid2.png">Grid (thicc)</option>
 						<option value="mosaic.png">Mosaic</option>
 						<option value="grad1">Linear Gradient</option>
 						<option value="grad2">Linear Gradient (Colorful)</option>
@@ -72,8 +72,28 @@
 					</select>	
 				</div>
 				<div>
+					<label>Random Angle?</label>
+					<label class="checkbox-container">
+						<input type="checkbox" id="toggleAngle" class="checkbox">
+						<span class="checkbox-custom"></span>
+					</label>
+				</div>
+				<div>
 					<label>Angle</label>
 					<input type="range" min="0" max="359" value="0" class="slider" id="numberAngle"
+						oninput="this.nextElementSibling.value = this.value">
+					<output>0</output>
+				</div>
+				<div>
+					<label>Random Scale?</label>
+					<label class="checkbox-container">
+						<input type="checkbox" id="toggleScale" class="checkbox">
+						<span class="checkbox-custom"></span>
+					</label>
+				</div>
+				<div>
+					<label>Scale</label>
+					<input type="range" min="0" max="250" value="0" class="slider" id="numberScale"
 						oninput="this.nextElementSibling.value = this.value">
 					<output>0</output>
 				</div>
@@ -106,6 +126,13 @@
 					<input type="range" min="100" max="5000" value="1000" class="slider" id="loopTime"
 						oninput="this.nextElementSibling.value = this.value">
 					<output>1000</output>
+				</div>
+				<div>
+					<label>White Background?</label>
+					<label class="checkbox-container">
+						<input type="checkbox" id="toggleBackground" class="checkbox" onclick="updateColor()">
+						<span class="checkbox-custom"></span>
+					</label>
 				</div>
 				<div>
 					<label>Color</label>
