@@ -24,8 +24,6 @@
 		transform: translateZ(0);
 		width: 100vw;
 		height: 100vh;
-		overflow: hidden;
-		position: relative;
 	}
 
 /* MAIN CONTAINER */
@@ -208,7 +206,7 @@
 		}
 		.controls-heading h2 {
 			transform: rotateZ(90deg);
-			color: var(--dark);
+			color: var(--complement);
 		}
 		.controls {
 			display: flex;
@@ -430,6 +428,17 @@
 				width: 80vw;
 			}
 			.intro {
-				padding-left: 80px;
+				padding: 80px;
+				font-size: 12px;
+			}
+			.intro h1 {
+				font-size: 3vw;
+			}
+			.floating-btn {
+				width: 60px;
+				height: 60px;
+			}
+			#screenshot {
+				right: 120px;
 			}
 		}
