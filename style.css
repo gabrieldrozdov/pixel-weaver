@@ -17,7 +17,7 @@
 		font-family: 'Anthony', serif;
 		text-transform: uppercase;
 		text-align: center;
-		line-height: .8em;
+		line-height: 1em;
 	}
 	body {
 		background: var(--dark);
