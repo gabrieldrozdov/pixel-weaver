@@ -32,6 +32,14 @@ for (i=0; i<introSpans.length; i++) {
 	introSpans[i].style.setProperty("--stretch", Math.random()*5+1.5);
 }
 
+let introLoop = setInterval(() => {
+	pageColor.value = parseInt(pageColor.value) + 1;
+	updateColor();
+	if (pageColor.value >= 359) {
+		pageColor.value = 0;
+	}
+}, 200)
+
 // Initalize animated grid variables
 let grid = document.querySelector(".container");
 let gridChildren = [];
@@ -62,6 +70,7 @@ let screenshotBtn = document.querySelector("#screenshot");
 let pauseBtn = document.querySelector("#pause");
 
 function initialize() {
+	clearInterval(introLoop);
 	pause = false;
 	pauseBtn.innerText = "⏸︎";
 	screenshotBtn.classList.remove("btn-hide");

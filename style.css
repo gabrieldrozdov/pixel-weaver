@@ -7,16 +7,17 @@
 		--light: hsl(0, 100%, 75%);
 	}
 	@font-face {
-		font-family: "Porpora";
-		src: url("assets/fonts/Porpora-Regular.woff2");
+		font-family: "Anthony";
+		src: url("assets/fonts/Anthony.woff2");
 	}
 	* {
 		box-sizing: border-box;
 		margin: 0;
 		padding: 0;
-		font-family: 'Porpora', serif;
+		font-family: 'Anthony', serif;
 		text-transform: uppercase;
 		text-align: center;
+		line-height: .8em;
 	}
 	body {
 		background: var(--dark);
@@ -185,7 +186,7 @@
 
 	/* MENU STYLING */
 		.controls-container {
-			position: fixed;
+			position: absolute;
 			transform: translateX(calc(-100% + 40px));
 			transition: transform .5s;
 			z-index: 999;
@@ -260,7 +261,7 @@
 			background: var(--light);
 			align-items: center;
 			justify-content: center;
-			font-family: 'Porpora', serif;
+			font-family: 'Anthony', serif;
 			border: 1px solid var(--dark);
 			height: 22px;
 			border-radius: 16px;
@@ -280,7 +281,7 @@
 			background: var(--light);
 			align-items: center;
 			justify-content: center;
-			font-family: 'Porpora', serif;
+			font-family: 'Anthony', serif;
 			border: 1px solid var(--dark);
 			height: 22px;
 			border-radius: 16px;
@@ -405,7 +406,7 @@
 			border: 1px solid var(--dark);
 			color: var(--dark);
 			border-radius: 40px;
-			padding: 10px;
+			padding: 6px 10px 10px 10px;
 			font-size: 20px;
 			font-weight: bold;
 			background-color: var(--light);
