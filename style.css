@@ -7,14 +7,14 @@
 		--light: hsl(0, 100%, 75%);
 	}
 	@font-face {
-		font-family: "BIZ UDMincho";
-		src: url("assets/fonts/BIZUDMincho-Regular.ttf");
+		font-family: "Porpora";
+		src: url("assets/fonts/Porpora-Regular.woff2");
 	}
 	* {
 		box-sizing: border-box;
 		margin: 0;
 		padding: 0;
-		font-family: 'BIZ UDMincho', serif;
+		font-family: 'Porpora', serif;
 		text-transform: uppercase;
 		text-align: center;
 	}
@@ -254,7 +254,7 @@
 			background: var(--light);
 			align-items: center;
 			justify-content: center;
-			font-family: 'BIZ UDMincho', serif;
+			font-family: 'Porpora', serif;
 			border: 1px solid var(--dark);
 			height: 22px;
 			border-radius: 16px;
@@ -274,7 +274,7 @@
 			background: var(--light);
 			align-items: center;
 			justify-content: center;
-			font-family: 'BIZ UDMincho', serif;
+			font-family: 'Porpora', serif;
 			border: 1px solid var(--dark);
 			height: 22px;
 			border-radius: 16px;
@@ -428,7 +428,7 @@
 				width: 80vw;
 			}
 			.intro {
-				padding: 80px;
+				padding: 40px 40px 40px 120px;
 				font-size: 12px;
 			}
 			.intro h1 {
