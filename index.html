@@ -14,143 +14,145 @@
 "https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
 	</head>
 	<body>
-		<div class="container"></div>
+		<div class="main">
+			<div class="container"></div>
 
-		<div id="screenshot" class="btn-hide floating-btn" onclick="screenshot()">📷</div>
-		<div id="pause" class="btn-hide floating-btn" onclick="pauseGrid()">⏸︎</div>
+			<div id="screenshot" class="btn-hide floating-btn" onclick="screenshot()">📷</div>
+			<div id="pause" class="btn-hide floating-btn" onclick="pauseGrid()">⏸︎</div>
 
-		<div id="notice"><p>Press the spacebar to un-hide controls</p></div>
+			<div id="notice"><p>Press the spacebar to un-hide controls</p></div>
 
-		<div class="intro">
-			<h1>
-				<span>P</span><span>i</span><span>x</span><span>e</span><span>l</span>
-				<br><span>W</span><span>e</span><span>a</span><span>v</span><span>e</span><span>r</span>
-			</h1>
-			<p>
-				Design + Code: <a href="https://www.gabrieldrozdov.com/" target="_blank">Gabriel Drozdov</a><br><br>
-				COLOPHON: <em>Porpora</em> by <a href="http://collletttivo.it/" target="_blank">Collletttivo</a><br><br>
-				IMAGES: Me, <a href="https://identity.risd.edu/" target="_blank">RISD</a>, <a href="https://unsplash.com/" target="_blank">Unsplash</a>, and <a href="https://randomwordgenerator.com/picture.php" target="_blank">Random Word Generator</a>
-			</p>
-		</div>
-
-		<div id="controls" class="controls-container">
-			<div class="controls-heading">
-				<h2>CONTROLS</h2>
+			<div class="intro">
+				<h1>
+					<span>P</span><span>i</span><span>x</span><span>e</span><span>l</span>
+					<br><span>W</span><span>e</span><span>a</span><span>v</span><span>e</span><span>r</span>
+				</h1>
+				<p>
+					Design + Code: <a href="https://www.gabrieldrozdov.com/" target="_blank">Gabriel Drozdov</a><br><br>
+					COLOPHON: <em>Porpora</em> by <a href="http://collletttivo.it/" target="_blank">Collletttivo</a><br><br>
+					IMAGES: Me, <a href="https://identity.risd.edu/" target="_blank">RISD</a>, <a href="https://unsplash.com/" target="_blank">Unsplash</a>, and <a href="https://randomwordgenerator.com/picture.php" target="_blank">Random Word Generator</a>
+				</p>
 			</div>
-			<div class="controls">
-				<div>
+
+			<div id="controls" class="controls-container">
+				<div class="controls-heading">
 					<h2>CONTROLS</h2>
 				</div>
-				<div>
-					<input type="file" id="customSource" style="width: 100%;">
-				</div>
-				<div>
-					<label>Source</label>
-					<select class="dropdown" id="source">
-						<option value="omar-flores-lQT_bOWtysE-unsplash.jpg">Bricks</option>
-						<option value="jeremy-thomas-O6N9RV2rzX8-unsplash.jpg">Leaves</option>
-						<option value="vitalijs-barilo-azMZaQCUyV8-unsplash.jpg">Textile</option>
-						<option value="dynamic-wang-UtUa7GYW300-unsplash.jpg">Dots</option>
-						<option value="ian-keefe-0BVkO0t6oCE-unsplash.jpg">Horizon</option>
-						<option value="bernard-hermant-hQ3WZnY3yZ0-unsplash.jpg">Texture</option>
-						<option value="pattern.png">Pattern</option>
-						<option value="sufyan-fL3ft7155kE-unsplash.jpg">Abstract</option>
-						<option value="joshua-hoehne-WPrTKRw8KRQ-unsplash.jpg">Stop</option>
-						<option value="kenny-eliason-SvhXD3kPSTY-unsplash.jpg">Grocery</option>
-						<option value="umberto-deb2EnbWPr8-unsplash.jpg">RGB</option>
-						<option value="micah-boswell-00nHr1Lpq6w-unsplash.jpg">Writing</option>
-						<option value="annie-spratt-askpr0s66Rg-unsplash.jpg">Text</option>
-						<option value="fabio-santaniello-bruun-Y6tGu-OH8lA-unsplash.jpg">Letters</option>
-						<option value="whist.png">Whist</option>
-						<option value="me.jpg">Me</option>
-						<option value="moonbug.jpg">Moonbug</option>
-						<option value="pumpkins.jpg">Pumpkins</option>
-						<option value="risd.png">RISD</option>
-						<option value="code.png">Code</option>
-						<option value="this.png">This</option>
-						<option value="grid.png">Grid (thin)</option>
-						<option value="grid2.png">Grid (thicc)</option>
-						<option value="mosaic.png">Mosaic</option>
-						<option value="grad1">Linear Gradient</option>
-						<option value="grad2">Linear Gradient (Colorful)</option>
-						<option value="grad3">Radial Gradient</option>
-						<option value="grad4">Radial Gradient (Colorful)</option>
-						<option value="gradgrid.png">Grid of Gradients</option>
-						<option value="random">Random Images</option>
-					</select>	
-				</div>
-				<div>
-					<label>Random Angle?</label>
-					<label class="checkbox-container">
-						<input type="checkbox" id="toggleAngle" class="checkbox">
-						<span class="checkbox-custom"></span>
-					</label>
-				</div>
-				<div>
-					<label>Angle</label>
-					<input type="range" min="0" max="359" value="0" class="slider" id="numberAngle"
-						oninput="this.nextElementSibling.value = this.value">
-					<output>0</output>
-				</div>
-				<div>
-					<label>Random Scale?</label>
-					<label class="checkbox-container">
-						<input type="checkbox" id="toggleScale" class="checkbox">
-						<span class="checkbox-custom"></span>
-					</label>
-				</div>
-				<div>
-					<label>Scale</label>
-					<input type="range" min="0" max="250" value="0" class="slider" id="numberScale"
-						oninput="this.nextElementSibling.value = this.value">
-					<output>0</output>
-				</div>
-				<div>
-					<label>Columns</label>
-					<input type="range" min="1" max="20" value="5" class="slider" id="numberCols"
-						oninput="this.nextElementSibling.value = this.value">
-					<output>5</output>
-				</div>
-				<div>
-					<label>Rows</label>
-					<input type="range" min="1" max="20" value="5" class="slider" id="numberRows"
-						oninput="this.nextElementSibling.value = this.value">
-					<output>5</output>
-				</div>
-				<div>
-					<label>Zoom</label>
-					<input type="range" min="1" max="5000" value="2000" class="slider" id="imageZoom"
-						oninput="this.nextElementSibling.value = this.value">
-					<output>2000</output>
-				</div>
-				<div>
-					<label>Shift</label>
-					<input type="range" min="0" max="300" value="50" class="slider" id="imageShift"
-						oninput="this.nextElementSibling.value = this.value">
-					<output>50</output>
-				</div>
-				<div>
-					<label>Time</label>
-					<input type="range" min="100" max="5000" value="1000" class="slider" id="loopTime"
-						oninput="this.nextElementSibling.value = this.value">
-					<output>1000</output>
-				</div>
-				<div>
-					<label>White Background?</label>
-					<label class="checkbox-container">
-						<input type="checkbox" id="toggleBackground" class="checkbox" onclick="updateColor()">
-						<span class="checkbox-custom"></span>
-					</label>
-				</div>
-				<div>
-					<label>Color</label>
-					<input type="range" min="0" max="359" value="180" class="slider" id="pageColor"
-						oninput="this.nextElementSibling.value = this.value; updateColor()">
-					<output>180</output>
-				</div>
-				<div id="buttons">
-					<button onclick="randomize()">Randomize</button>
-					<button onclick="initialize()" id="generate">Generate</button>
+				<div class="controls">
+					<div>
+						<h2>CONTROLS</h2>
+					</div>
+					<div>
+						<input type="file" id="customSource" style="width: 100%;">
+					</div>
+					<div>
+						<label>Source</label>
+						<select class="dropdown" id="source">
+							<option value="omar-flores-lQT_bOWtysE-unsplash.jpg">Bricks</option>
+							<option value="jeremy-thomas-O6N9RV2rzX8-unsplash.jpg">Leaves</option>
+							<option value="vitalijs-barilo-azMZaQCUyV8-unsplash.jpg">Textile</option>
+							<option value="dynamic-wang-UtUa7GYW300-unsplash.jpg">Dots</option>
+							<option value="ian-keefe-0BVkO0t6oCE-unsplash.jpg">Horizon</option>
+							<option value="bernard-hermant-hQ3WZnY3yZ0-unsplash.jpg">Texture</option>
+							<option value="pattern.png">Pattern</option>
+							<option value="sufyan-fL3ft7155kE-unsplash.jpg">Abstract</option>
+							<option value="joshua-hoehne-WPrTKRw8KRQ-unsplash.jpg">Stop</option>
+							<option value="kenny-eliason-SvhXD3kPSTY-unsplash.jpg">Grocery</option>
+							<option value="umberto-deb2EnbWPr8-unsplash.jpg">RGB</option>
+							<option value="micah-boswell-00nHr1Lpq6w-unsplash.jpg">Writing</option>
+							<option value="annie-spratt-askpr0s66Rg-unsplash.jpg">Text</option>
+							<option value="fabio-santaniello-bruun-Y6tGu-OH8lA-unsplash.jpg">Letters</option>
+							<option value="whist.png">Whist</option>
+							<option value="me.jpg">Me</option>
+							<option value="moonbug.jpg">Moonbug</option>
+							<option value="pumpkins.jpg">Pumpkins</option>
+							<option value="risd.png">RISD</option>
+							<option value="code.png">Code</option>
+							<option value="this.png">This</option>
+							<option value="grid.png">Grid (thin)</option>
+							<option value="grid2.png">Grid (thicc)</option>
+							<option value="mosaic.png">Mosaic</option>
+							<option value="grad1">Linear Gradient</option>
+							<option value="grad2">Linear Gradient (Colorful)</option>
+							<option value="grad3">Radial Gradient</option>
+							<option value="grad4">Radial Gradient (Colorful)</option>
+							<option value="gradgrid.png">Grid of Gradients</option>
+							<option value="random">Random Images</option>
+						</select>	
+					</div>
+					<div>
+						<label>Random Angle?</label>
+						<label class="checkbox-container">
+							<input type="checkbox" id="toggleAngle" class="checkbox">
+							<span class="checkbox-custom"></span>
+						</label>
+					</div>
+					<div>
+						<label>Angle</label>
+						<input type="range" min="0" max="359" value="0" class="slider" id="numberAngle"
+							oninput="this.nextElementSibling.value = this.value">
+						<output>0</output>
+					</div>
+					<div>
+						<label>Random Scale?</label>
+						<label class="checkbox-container">
+							<input type="checkbox" id="toggleScale" class="checkbox">
+							<span class="checkbox-custom"></span>
+						</label>
+					</div>
+					<div>
+						<label>Scale</label>
+						<input type="range" min="0" max="250" value="0" class="slider" id="numberScale"
+							oninput="this.nextElementSibling.value = this.value">
+						<output>0</output>
+					</div>
+					<div>
+						<label>Columns</label>
+						<input type="range" min="1" max="20" value="5" class="slider" id="numberCols"
+							oninput="this.nextElementSibling.value = this.value">
+						<output>5</output>
+					</div>
+					<div>
+						<label>Rows</label>
+						<input type="range" min="1" max="20" value="5" class="slider" id="numberRows"
+							oninput="this.nextElementSibling.value = this.value">
+						<output>5</output>
+					</div>
+					<div>
+						<label>Zoom</label>
+						<input type="range" min="1" max="5000" value="2000" class="slider" id="imageZoom"
+							oninput="this.nextElementSibling.value = this.value">
+						<output>2000</output>
+					</div>
+					<div>
+						<label>Shift</label>
+						<input type="range" min="0" max="300" value="50" class="slider" id="imageShift"
+							oninput="this.nextElementSibling.value = this.value">
+						<output>50</output>
+					</div>
+					<div>
+						<label>Time</label>
+						<input type="range" min="100" max="5000" value="1000" class="slider" id="loopTime"
+							oninput="this.nextElementSibling.value = this.value">
+						<output>1000</output>
+					</div>
+					<div>
+						<label>White Background?</label>
+						<label class="checkbox-container">
+							<input type="checkbox" id="toggleBackground" class="checkbox" onclick="updateColor()">
+							<span class="checkbox-custom"></span>
+						</label>
+					</div>
+					<div>
+						<label>Color</label>
+						<input type="range" min="0" max="359" value="180" class="slider" id="pageColor"
+							oninput="this.nextElementSibling.value = this.value; updateColor()">
+						<output>180</output>
+					</div>
+					<div id="buttons">
+						<button onclick="randomize()">Randomize</button>
+						<button onclick="initialize()" id="generate">Generate</button>
+					</div>
 				</div>
 			</div>
 		</div>

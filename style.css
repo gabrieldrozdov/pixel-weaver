@@ -25,6 +25,12 @@
 		width: 100vw;
 		height: 100vh;
 	}
+	.main {
+		position: relative;
+		transform: translateZ(0);
+		width: 100vw;
+		height: 100vh;
+	}
 
 /* MAIN CONTAINER */
 	.container {
@@ -307,6 +313,9 @@
 			background: var(--dark);
 			color: var(--light);
 		}
+		select {
+			width: 100%;
+		}
 
 	/* CHECKBOXES */
 		.controls div:hover .checkbox-custom {
@@ -426,6 +435,10 @@
 		@media screen and (max-width: 500px) {
 			.controls {
 				width: 80vw;
+				font-size: 14px;
+			}
+			#buttons button {
+				font-size: 14px
 			}
 			.intro {
 				padding: 40px 40px 40px 120px;
