@@ -283,28 +283,17 @@ function screenshot() {
 	notice.style.filter = "blur(0)";
 	setTimeout(function() {
 		window.addEventListener('click', screenshotOut)
+		window.addEventListener('touchstart', screenshotOut)
 		notice.style.opacity = "0";
 		notice.style.filter = "blur(100px)";
 		screenshotMode = true;
 	}, 3000);
 }
 function screenshotOut() {
+	window.removeEventListener('click', screenshotOut)
+	window.removeEventListener('touchstart', screenshotOut)
+	screenshotMode = false;
 	controls.classList.remove("controls-hide");
 	screenshotBtn.classList.remove("btn-hide");
 	pauseBtn.classList.remove("btn-hide");
-	screenshotMode = false;
 }
-
-document.body.onkeyup = function(e) {
-	if (e.key == " " ||
-		e.code == "Space" ||      
-		e.keyCode == 32
-	) {
-		if (screenshotMode) {
-			screenshotMode = false;
-			controls.classList.remove("controls-hide");
-			screenshotBtn.classList.remove("btn-hide");
-			pauseBtn.classList.remove("btn-hide");
-		}
-	}
-  }
