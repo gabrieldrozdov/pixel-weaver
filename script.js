@@ -40,7 +40,7 @@ let introLoop = setInterval(() => {
 	}
 }, 200)
 
-// Initalize animated grid variables
+// Initialize animated grid variables
 let grid = document.querySelector(".container");
 let gridChildren = [];
 let gridAnim;
@@ -282,10 +282,17 @@ function screenshot() {
 	notice.style.opacity = "1";
 	notice.style.filter = "blur(0)";
 	setTimeout(function() {
+		window.addEventListener('click', screenshotOut)
 		notice.style.opacity = "0";
 		notice.style.filter = "blur(100px)";
 		screenshotMode = true;
 	}, 3000);
+}
+function screenshotOut() {
+	controls.classList.remove("controls-hide");
+	screenshotBtn.classList.remove("btn-hide");
+	pauseBtn.classList.remove("btn-hide");
+	screenshotMode = false;
 }
 
 document.body.onkeyup = function(e) {
